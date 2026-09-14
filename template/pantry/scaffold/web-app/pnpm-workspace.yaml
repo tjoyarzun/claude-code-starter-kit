@@ -1,0 +1,13 @@
+# pnpm 10+ refuses to run dependency build scripts unless you allow them explicitly —
+# a supply-chain safety default. Without this file, `pnpm install` stops with
+# ERR_PNPM_IGNORED_BUILDS and nothing builds.
+#
+# These two compile native binaries and are required by Vite:
+#   @swc/core  — the JSX/TypeScript transform used by @vitejs/plugin-react-swc
+#   esbuild    — Vite's bundler for dependency pre-bundling
+#
+# Adding a dependency that needs a build script? pnpm will tell you, and
+# `pnpm approve-builds` will add it here. Check what it is before you say yes.
+allowBuilds:
+  "@swc/core": true
+  esbuild: true

@@ -1,0 +1,8 @@
+# This repo ships templates — it should never carry build output or real secrets.
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.env.local
+.vercel

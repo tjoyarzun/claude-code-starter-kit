@@ -1,0 +1,10 @@
+# The workspace root is not a git repo — this file exists for tools that scan upward,
+# and as a safety net if you ever do `git init` here by accident.
+.env
+.env.local
+.env.*.local
+.DS_Store
+node_modules/
+dist/
+*.log
+.vercel
