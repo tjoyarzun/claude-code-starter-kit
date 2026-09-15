@@ -111,7 +111,6 @@ cat <<SUMMARY
   ├── PROJECTS.md             index of what you've built
   ├── projects/apps|sites/    your projects go here
   ├── library/                templates, skills, components, guides, tools
-  ├── shared/                 used by 2 projects, not yet promoted
   ├── agent-docs/             things you learned worth keeping
   └── .claude/                settings.json + skills symlinks
 

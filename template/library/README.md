@@ -49,6 +49,16 @@ coincidence; three times is a pattern.
 Resist promoting early. A premature abstraction in your library is worse than three copies,
 because you'll bend the next project to fit it.
 
+**Where does the second copy live?** In the second project. There is no staging area, and
+that's deliberate — a half-generalized copy sitting in a third location is one more thing to
+keep in sync with nothing to sync it. Duplication *is* the signal you're waiting for. Let the
+two copies drift; the differences between them are what tells you which parts are the pattern
+and which were local accidents. If you want the second copy findable later, one line in
+`agent-docs/` costs nothing.
+
+`/promote-to-library` searches `projects/` for the copies when the time comes, so you don't
+have to remember where they were.
+
 ## Rules
 
 1. **No secrets.** `.env.example` only, never `.env`.

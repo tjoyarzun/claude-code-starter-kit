@@ -28,7 +28,6 @@ before but aren't a full-time developer.
 │   ├── components/            Components promoted after a third reuse
 │   ├── guides/                Step-by-step walkthroughs that actually work
 │   └── tools/                 Shell scripts (doctor, new-project, link-skills)
-├── shared/                    In-progress code used by 2 projects, not yet promoted
 ├── agent-docs/                "I learned something non-obvious" drawer
 └── .claude/
     ├── settings.json          Which commands Claude may run without asking

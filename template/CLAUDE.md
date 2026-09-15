@@ -35,7 +35,7 @@ Identify the shape first — the right answers depend on it.
 **Default to the smallest shape that does the job.** A personal site with five pages does not
 need React. Choosing Shape B when Shape B is enough is a skill, not a compromise.
 
-## The `library/` library
+## The `library/` directory
 
 `library/` is a shelf you copy from, not a dependency you link to.
 
@@ -44,6 +44,8 @@ need React. Choosing Shape B when Shape B is enough is a skill, not a compromise
 - **Promotion is an explicit copy.** When a project invents something worth reusing, copy it
   back into `library/` with a commit message naming where it came from. Rule of thumb:
   promote on the 3rd reuse, not the 1st — two uses is a coincidence.
+- **The second copy lives in the second project**, not in a staging folder. Duplication is
+  the signal; the drift between two copies is what shows you the real pattern.
 - Nothing in `library/` is imported at build time. Every project ships self-contained.
 
 ## Working agreements
@@ -78,7 +80,6 @@ need React. Choosing Shape B when Shape B is enough is a skill, not a compromise
 │   └── sites/       Shape B — static sites
 ├── PROJECTS.md      Index of every project, with repo and live URL
 ├── library/         templates, skills, components, guides, tools
-├── shared/          Used by 2 projects, not yet promoted to library/
 ├── agent-docs/      Notes on things I learned that weren't obvious
 └── .claude/         settings.json + skills symlinks
 ```
