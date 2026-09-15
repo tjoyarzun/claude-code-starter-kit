@@ -1,4 +1,4 @@
-# Cookbook 2 — Point a custom domain at a Vercel project
+# Guide 2 — Point a custom domain at a Vercel project
 
 *About 15 minutes of work, plus up to an hour of waiting for DNS.*
 

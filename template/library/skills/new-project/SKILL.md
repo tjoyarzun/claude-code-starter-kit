@@ -1,6 +1,6 @@
 ---
 name: new-project
-description: Start a new project from scratch — interview, pick the shape, copy the scaffold, set up git and GitHub, make the first commit, record it in solutions. Triggers "new project", "start a project", "I want to build", "scaffold", "create a site", "create an app", "bootstrap".
+description: Start a new project from scratch — interview, pick the shape, copy the template, set up git and GitHub, make the first commit, record it in PROJECTS.md. Triggers "new project", "start a project", "I want to build", "scaffold", "create a site", "create an app", "bootstrap".
 ---
 
 ## What this does
@@ -46,7 +46,7 @@ Say which you picked and why in one sentence, then confirm before creating anyth
 ## Step 3 — Create
 
 ```bash
-bash pantry/tools/new-project.sh app <slug>     # or: site <slug>
+bash library/tools/new-project.sh app <slug>     # or: site <slug>
 ```
 
 The script copies the scaffold, sets `package.json`'s name, runs `git init`, and stages the
@@ -82,7 +82,7 @@ Report the repo URL.
 
 ## Step 6 — Record it
 
-Add a row to `pantry/solutions/README.md`: project, path, repo, live URL (blank for now),
+Add a row to `PROJECTS.md`: project, path, repo, live URL (blank for now),
 status `active`.
 
 ## Step 7 — Hand off
@@ -98,14 +98,14 @@ Tell them, concretely:
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| `gh: command not found` | GitHub CLI not installed | `bash pantry/tools/doctor.sh` and follow the hint |
+| `gh: command not found` | GitHub CLI not installed | `bash library/tools/doctor.sh` and follow the hint |
 | `repository already exists` | Name taken on their account | Pick another slug, or `gh repo delete` the old one |
 | `pnpm install` fails on peer deps | Stale lockfile | Delete `node_modules/` and `pnpm-lock.yaml`, install again |
 | Directory already exists | Project of that name exists | New slug, or work in the existing project |
 
 ## Related
 
-- `pantry/cookbooks/0-first-web-app.md` — the manual version, Shape A
-- `pantry/cookbooks/1-first-static-site.md` — the manual version, Shape B
+- `library/guides/0-first-web-app.md` — the manual version, Shape A
+- `library/guides/1-first-static-site.md` — the manual version, Shape B
 - `deploy-to-vercel` — put it online
 - `ship-check` — run before the first deploy

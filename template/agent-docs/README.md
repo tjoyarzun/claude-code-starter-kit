@@ -10,14 +10,14 @@ minutes; the payoff is not re-deriving it in four months.
 
 - Non-obvious tool behavior — CLI quirks, API gotchas, deploy edge cases
 - Why you chose X over Y (a lightweight decision record)
-- Patterns used in more than one project but not yet graduated to `pantry/`
+- Patterns used in more than one project but not yet promoted to `library/`
 - Vocabulary — when a word means something specific in your projects
 
 ## What doesn't
 
 - Project-specific notes → that project's own README or `agent-docs/`
-- Anything already in the scaffold or a pantry README
-- Step-by-step walkthroughs → `pantry/cookbooks/`
+- Anything already in the scaffold or a library README
+- Step-by-step walkthroughs → `library/guides/`
 
 ## Format
 

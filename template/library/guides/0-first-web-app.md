@@ -1,4 +1,4 @@
-# Cookbook 0 — Your first web app, start to live
+# Guide 0 — Your first web app, start to live
 
 *Shape A: Vite + React + TypeScript + Tailwind, deployed to Vercel. About 20 minutes.*
 
@@ -9,7 +9,7 @@ questions. This is the manual version, so you know what the skill is doing.
 
 ```bash
 cd ~/dev
-bash pantry/tools/new-project.sh app my-app
+bash library/tools/new-project.sh app my-app
 cd projects/apps/my-app
 pnpm install
 ```
@@ -78,7 +78,7 @@ push → live**.
 
 ## 7. Record it
 
-Add a row in `pantry/solutions/README.md` with the path, repo, live URL, and status.
+Add a row in `PROJECTS.md` with the path, repo, live URL, and status.
 
 ---
 
@@ -96,4 +96,4 @@ Add a row in `pantry/solutions/README.md` with the path, repo, live URL, and sta
 
 - `pnpm dlx shadcn@latest add button card` — add real components
 - `/ship-check` before each deploy
-- Cookbook 2 if you want a custom domain
+- Guide 2 if you want a custom domain

@@ -1,7 +1,7 @@
 # `skills/`
 
 A skill is a markdown file that teaches Claude Code a repeatable job with your preferences
-already baked in. `pantry/tools/link-skills.sh` symlinks each one into `../.claude/skills/`,
+already baked in. `library/tools/link-skills.sh` symlinks each one into `../.claude/skills/`,
 so editing a skill here takes effect immediately — no sync step to forget.
 
 ## What ships
@@ -14,7 +14,7 @@ so editing a skill here takes effect immediately — no sync step to forget.
 | `ship-check` | Before any deploy. Build, secrets, accessibility, mobile, performance, metadata → blocker vs later |
 | `explain-this` | You want to understand something rather than just fix it |
 | `catch-up` | Starting a session. Reconstructs where you left off from the repo itself |
-| `graduate-to-pantry` | Something earned its third reuse and belongs in the library |
+| `promote-to-library` | Something earned its third reuse and belongs in the library |
 
 ## Invoking
 
@@ -46,7 +46,7 @@ description: One line on what it does and when. Triggers "phrase", "phrase", "ph
 Then:
 
 ```bash
-bash pantry/tools/link-skills.sh
+bash library/tools/link-skills.sh
 ```
 
 and restart the Claude Code session.

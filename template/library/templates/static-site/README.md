@@ -6,7 +6,7 @@ opens directly.
 ## Start a project from it
 
 ```bash
-bash pantry/tools/new-project.sh site <slug>
+bash library/tools/new-project.sh site <slug>
 cd projects/sites/<slug>
 npx serve .              # http://localhost:3000
 ```

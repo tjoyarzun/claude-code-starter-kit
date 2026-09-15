@@ -79,7 +79,7 @@ history of their code. `node` runs JavaScript outside a browser, which is what b
 are written in. `pnpm` downloads the libraries a project depends on. `gh` talks to GitHub
 from the terminal so they never have to click through the website for routine work.
 
-Run `bash template/pantry/tools/doctor.sh` from the kit folder first. It prints what's
+Run `bash template/library/tools/doctor.sh` from the kit folder first. It prints what's
 present, what's missing, and the exact install command for each gap on their platform. Work
 the gaps, then run it again until it's clean.
 
@@ -162,7 +162,7 @@ the least fiddly. Nothing about the workspace is Vercel-specific.
 ## Phase 4 — Build the workspace
 
 **What this is for:** A consistent place for everything, so that "where does this go?" is
-never a question. Projects live in `projects/`. Reusable pieces live in `pantry/`. Things you
+never a question. Projects live in `projects/`. Reusable pieces live in `library/`. Things you
 learned live in `agent-docs/`.
 
 Run the bootstrapper from the kit folder:
@@ -182,8 +182,8 @@ describe them:
 - `projects/apps/` vs `projects/sites/` — apps have a build step and React; sites are files a
   browser opens directly. Both are legitimate; picking the smaller one when it fits is a
   skill.
-- `pantry/` — their library. Scaffolds are starting points; snacks are components worth
-  reusing; cookbooks are walkthroughs that actually work.
+- `library/` — their library. Scaffolds are starting points; components are components worth
+  reusing; guides are walkthroughs that actually work.
 - `.claude/settings.json` — the permission allowlist. Explain the model: read-only and
   reversible commands run automatically, anything that pushes, deletes, or publishes asks
   first. Show them a line or two so it isn't a black box.
@@ -201,7 +201,7 @@ the recommended extensions when it offers.
 with your preferences baked in. Without them, every session starts from zero and you
 re-explain your conventions forever.
 
-The bootstrapper already symlinked `pantry/skills/*` into `.claude/skills/`. Confirm with
+The bootstrapper already symlinked `library/skills/*` into `.claude/skills/`. Confirm with
 `ls -la ~/dev/.claude/skills/`, then explain each of the seven in one line and tell them the
 two ways to invoke: type `/new-project`, or just describe what they want and Claude picks.
 

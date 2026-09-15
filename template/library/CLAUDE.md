@@ -1,11 +1,11 @@
-# `pantry/` — agent context
+# `library/` — agent context
 
 Orientation is in [README.md](README.md). This file is behavior rules for working *inside*
-pantry.
+library.
 
 ## The two scaffolds
 
-**Shape A — Web app** (`scaffold/web-app/`)
+**Shape A — Web app** (`templates/web-app/`)
 
 | Layer | Pick | Why |
 |---|---|---|
@@ -18,7 +18,7 @@ pantry.
 | Test | Vitest + Testing Library | Same config as Vite; no second toolchain |
 | Deploy | Vercel | Zero-config with the GitHub integration |
 
-**Shape B — Static site** (`scaffold/static-site/`)
+**Shape B — Static site** (`templates/static-site/`)
 
 Plain HTML, CSS with custom properties, vanilla JS modules. No bundler, no framework, no
 build step. Upgrade path is Astro when the content grows past what's comfortable to hand-edit.
@@ -38,7 +38,7 @@ The question to ask before reaching for a state library:
 When you change a scaffold, **verify it still works** before considering the change done:
 
 ```bash
-bash pantry/tools/new-project.sh app scratch-test
+bash library/tools/new-project.sh app scratch-test
 cd projects/apps/scratch-test && pnpm install && pnpm build
 ```
 
@@ -47,9 +47,9 @@ because it fails at the moment someone is excited to start something.
 
 ## Adding a skill
 
-1. `mkdir pantry/skills/<name>` and write `SKILL.md` with `name` and `description`
+1. `mkdir library/skills/<name>` and write `SKILL.md` with `name` and `description`
    frontmatter — the description is what Claude matches on, so list the trigger phrases.
-2. `bash pantry/tools/link-skills.sh`
+2. `bash library/tools/link-skills.sh`
 3. Restart the Claude Code session.
 
 Keep skills concrete. A skill that says "follow best practices" does nothing; a skill that
@@ -58,5 +58,5 @@ says "run `pnpm build`, then check `dist/` is under 500 KB, then…" is worth ha
 ## Rules
 
 1. **Library, not dependency.** Nothing here is imported at build time.
-2. **Graduate on the 3rd reuse.** Commit messages name the project it came from.
+2. **Promote on the 3rd reuse.** Commit messages name the project it came from.
 3. **No secrets, ever.** `.env.example` only.

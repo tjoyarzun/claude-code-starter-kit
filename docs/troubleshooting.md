@@ -108,8 +108,8 @@ Check that `CLAUDE.md` is in the folder you started `claude` from (or an ancesto
 `/memory` to see what's loaded.
 
 **Skills aren't showing up**
-`ls -la ~/dev/.claude/skills/` — you should see symlinks into `pantry/skills/`. If not,
-re-run `bash ~/dev/pantry/tools/link-skills.sh`.
+`ls -la ~/dev/.claude/skills/` — you should see symlinks into `library/skills/`. If not,
+re-run `bash ~/dev/library/tools/link-skills.sh`.
 
 **Answers got vague or it forgot earlier context**
 The session is too long. `/clear` and restate the goal.

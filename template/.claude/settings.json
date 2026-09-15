@@ -67,8 +67,8 @@
       "Bash(ln -sfn:*)",
       "Bash(cp:*)",
       "Bash(chmod +x:*)",
-      "Bash(bash pantry/tools/doctor.sh:*)",
-      "Bash(bash pantry/tools/link-skills.sh:*)"
+      "Bash(bash library/tools/doctor.sh:*)",
+      "Bash(bash library/tools/link-skills.sh:*)"
     ],
     "ask": [
       "Bash(git commit:*)",

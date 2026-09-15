@@ -82,13 +82,13 @@ ok "Created projects/apps and projects/sites"
 
 # --- executable bits ---------------------------------------------------------
 
-chmod +x "$TARGET"/pantry/tools/*.sh 2>/dev/null || true
-ok "Made pantry/tools scripts executable"
+chmod +x "$TARGET"/library/tools/*.sh 2>/dev/null || true
+ok "Made library/tools scripts executable"
 
 # --- link skills -------------------------------------------------------------
 
-if [ -x "$TARGET/pantry/tools/link-skills.sh" ]; then
-  bash "$TARGET/pantry/tools/link-skills.sh" "$TARGET"
+if [ -x "$TARGET/library/tools/link-skills.sh" ]; then
+  bash "$TARGET/library/tools/link-skills.sh" "$TARGET"
 else
   fail "link-skills.sh missing — skills will not be available to Claude Code."
 fi
@@ -108,15 +108,16 @@ cat <<SUMMARY
 
   $TARGET
   ├── CLAUDE.md               instructions Claude reads every session
+  ├── PROJECTS.md             index of what you've built
   ├── projects/apps|sites/    your projects go here
-  ├── pantry/                 your library: scaffold, skills, snacks, cookbooks, tools
-  ├── shared/                 utilities used by more than one project
+  ├── library/                templates, skills, components, guides, tools
+  ├── shared/                 used by 2 projects, not yet promoted
   ├── agent-docs/             things you learned worth keeping
   └── .claude/                settings.json + skills symlinks
 
 Next:
   cd $TARGET
-  bash pantry/tools/doctor.sh      # confirm the toolchain is healthy
+  bash library/tools/doctor.sh      # confirm the toolchain is healthy
   code workspace.code-workspace    # open in VS Code
   claude                           # then: /new-project
 

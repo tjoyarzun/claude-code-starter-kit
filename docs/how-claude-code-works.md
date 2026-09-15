@@ -36,7 +36,7 @@ correcting Claude the same way twice, that correction belongs in `CLAUDE.md`. Ju
 ## 3. Skills are repeatable jobs
 
 A skill is a markdown file with a name, a description of when to use it, and steps. Your
-workspace ships seven. They live in `pantry/skills/` and are symlinked into `.claude/skills/`.
+workspace ships seven. They live in `library/skills/` and are symlinked into `.claude/skills/`.
 
 Invoke by name (`/ship-check`) or just describe the goal and let Claude match. Writing your
 own is the natural next step once you notice yourself explaining the same multi-step process

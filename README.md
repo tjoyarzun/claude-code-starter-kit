@@ -21,18 +21,18 @@ before but aren't a full-time developer.
 ├── projects/
 │   ├── apps/                  React web apps (Vite + TypeScript + Tailwind)
 │   └── sites/                 Static sites (HTML/CSS/JS)
-├── pantry/                    Your personal library
-│   ├── scaffold/              Starting points you copy for a new project
+├── PROJECTS.md                Index of every project you've built
+├── library/                   Your reusable library
+│   ├── templates/             Starting points you copy for a new project
 │   ├── skills/                Custom Claude Code skills (7 included)
-│   ├── snacks/                Reusable components you've earned the right to reuse
-│   ├── cookbooks/             Step-by-step walkthroughs that actually work
-│   ├── tools/                 Shell scripts (doctor, new-project, link-skills)
-│   └── solutions/             Index of every project you've built
-├── shared/                    Utilities used by more than one project
+│   ├── components/            Components promoted after a third reuse
+│   ├── guides/                Step-by-step walkthroughs that actually work
+│   └── tools/                 Shell scripts (doctor, new-project, link-skills)
+├── shared/                    In-progress code used by 2 projects, not yet promoted
 ├── agent-docs/                "I learned something non-obvious" drawer
 └── .claude/
     ├── settings.json          Which commands Claude may run without asking
-    └── skills/                Symlinks to pantry/skills
+    └── skills/                Symlinks to library/skills
 ```
 
 Plus accounts and tools wired together: GitHub (code lives here), Vercel (websites go live
@@ -129,7 +129,7 @@ them by name (`/new-project`) or just by describing what you want.
 | `ship-check` | Pre-deploy gate — typecheck, lint, build, secret scan, accessibility and performance sanity |
 | `explain-this` | Teaching mode. Explains a file, an error, or a concept at the depth you ask for |
 | `catch-up` | "Where did I leave off?" — reads recent commits and open work, proposes the next step |
-| `graduate-to-pantry` | Promotes a pattern into your library once it's earned a third reuse |
+| `promote-to-library` | Promotes a pattern into your library once it's earned a third reuse |
 
 ---
 

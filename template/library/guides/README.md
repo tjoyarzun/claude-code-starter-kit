@@ -1,9 +1,9 @@
-# `cookbooks/`
+# `guides/`
 
 Walkthroughs that actually work. Exact commands, in order, with the gotchas noted where they
 bite. Not tutorials — you can read a tutorial anywhere.
 
-| Cookbook | What it covers |
+| Guide | What it covers |
 |---|---|
 | [`0-first-web-app.md`](0-first-web-app.md) | Scaffold → running locally → on GitHub → live on Vercel |
 | [`1-first-static-site.md`](1-first-static-site.md) | The no-build-step path, for when React is overkill |
@@ -11,7 +11,7 @@ bite. Not tutorials — you can read a tutorial anywhere.
 
 ## Adding one
 
-Write a cookbook when a task took you more than one try. That second try is the whole value —
+Write a guide when a task took you more than one try. That second try is the whole value —
 it means the naive path has a trap in it, and you just learned where.
 
 Rules that keep them useful:

@@ -1,17 +1,17 @@
-# `pantry/tools/`
+# `library/tools/`
 
 Shell scripts you run directly. Each one does a single job and prints what it did.
 
 | Script | What it does |
 |---|---|
 | `doctor.sh` | Checks the whole toolchain — installs, versions, auth, workspace wiring — and prints the exact fix command for anything missing. Run it whenever something feels broken. |
-| `link-skills.sh` | Symlinks `pantry/skills/*` into `.claude/skills/` so Claude Code can find them. Re-run after adding a skill. |
+| `link-skills.sh` | Symlinks `library/skills/*` into `.claude/skills/` so Claude Code can find them. Re-run after adding a skill. |
 | `new-project.sh` | Copies a scaffold into `projects/` and runs `git init`. The non-interactive core of the `/new-project` skill. |
 
 ```bash
-bash pantry/tools/doctor.sh
-bash pantry/tools/link-skills.sh
-bash pantry/tools/new-project.sh app my-new-app
+bash library/tools/doctor.sh
+bash library/tools/link-skills.sh
+bash library/tools/new-project.sh app my-new-app
 ```
 
 ## Adding your own

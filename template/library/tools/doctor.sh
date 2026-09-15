@@ -142,7 +142,7 @@ echo
 
 WS=""
 for candidate in "$PWD" "$(dirname "$PWD")" "$HOME/dev" "$HOME/code" "$HOME/projects"; do
-  if [ -f "$candidate/CLAUDE.md" ] && [ -d "$candidate/pantry" ]; then WS="$candidate"; break; fi
+  if [ -f "$candidate/CLAUDE.md" ] && [ -d "$candidate/library" ]; then WS="$candidate"; break; fi
 done
 
 if [ -n "$WS" ]; then
@@ -155,7 +155,7 @@ if [ -n "$WS" ]; then
     ok "skills" "$SKILLS linked"
   else
     bad "skills" "none linked"
-    hint "bash $WS/pantry/tools/link-skills.sh"
+    hint "bash $WS/library/tools/link-skills.sh"
     MISSING=$((MISSING+1))
   fi
   if [ -f "$WS/.env" ] && [ -d "$WS/.git" ]; then

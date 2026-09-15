@@ -5,7 +5,7 @@ Vite 6 + React 18 + TypeScript (strict) + Tailwind 3. Ready for shadcn/ui.
 ## Start a project from it
 
 ```bash
-bash pantry/tools/new-project.sh app <slug>
+bash library/tools/new-project.sh app <slug>
 cd projects/apps/<slug>
 pnpm install
 pnpm dev                 # http://localhost:5173

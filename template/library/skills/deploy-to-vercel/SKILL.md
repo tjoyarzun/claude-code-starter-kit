@@ -95,7 +95,7 @@ This is why "just push and see" is a reasonable way to work here: the undo butto
 
 ## Custom domain
 
-See `pantry/cookbooks/2-custom-domain.md`.
+See `library/guides/2-custom-domain.md`.
 
 ## Common failures
 
@@ -111,11 +111,11 @@ See `pantry/cookbooks/2-custom-domain.md`.
 
 ## After a successful deploy
 
-Update the project's row in `pantry/solutions/README.md` with the live URL and set status to
+Update the project's row in `PROJECTS.md` with the live URL and set status to
 `shipped`.
 
 ## Related
 
 - `ship-check` — run before deploying
-- `pantry/cookbooks/2-custom-domain.md` — custom domains
+- `library/guides/2-custom-domain.md` — custom domains
 - `git-rescue` — if the push that triggered the deploy went wrong

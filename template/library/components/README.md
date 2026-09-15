@@ -1,21 +1,21 @@
-# `snacks/`
+# `components/`
 
-Copy-and-tweak components and patterns. Each snack is self-contained — copy the folder into
+Copy-and-tweak components and patterns. Each component is self-contained — copy the folder into
 your project's `src/components/` and it works.
 
-## Available snacks
+## Available components
 
 *(none yet — this fills up as you build)*
 
 ## Adding one
 
-A snack earns its place on the **third** reuse, not the first. Until then it's a coincidence,
-not a pattern. Run `/graduate-to-pantry` when a component qualifies; it'll do the generalizing
+A component earns its place on the **third** reuse, not the first. Until then it's a coincidence,
+not a pattern. Run `/promote-to-library` when a component qualifies; it'll do the generalizing
 and write the README.
 
 ```
-snacks/
-└── <snack-name>/
+components/
+└── <component-name>/
     ├── README.md       what it does, props, a usage example
     ├── index.tsx       the component
     └── *.css           styles, if it isn't pure Tailwind

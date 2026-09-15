@@ -29,8 +29,8 @@ USAGE
 if [ -z "$SHAPE" ] || [ -z "$SLUG" ]; then usage; exit 2; fi
 
 case "$SHAPE" in
-  app)  SRC="$WS/pantry/scaffold/web-app";     DEST="$WS/projects/apps/$SLUG" ;;
-  site) SRC="$WS/pantry/scaffold/static-site"; DEST="$WS/projects/sites/$SLUG" ;;
+  app)  SRC="$WS/library/templates/web-app";     DEST="$WS/projects/apps/$SLUG" ;;
+  site) SRC="$WS/library/templates/static-site"; DEST="$WS/projects/sites/$SLUG" ;;
   *)    usage; exit 2 ;;
 esac
 
@@ -80,5 +80,5 @@ cat <<NEXT
   git commit -m "initial commit"
   gh repo create $SLUG --private --source=. --push
 
-Then add a row for it in pantry/solutions/README.md.
+Then add a row for it in PROJECTS.md.
 NEXT

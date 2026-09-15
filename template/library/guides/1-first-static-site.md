@@ -1,4 +1,4 @@
-# Cookbook 1 — Your first static site
+# Guide 1 — Your first static site
 
 *Shape B: HTML, CSS, and vanilla JS. No build step. About 10 minutes.*
 
@@ -18,7 +18,7 @@ project becomes a chore.
 
 ```bash
 cd ~/dev
-bash pantry/tools/new-project.sh site my-site
+bash library/tools/new-project.sh site my-site
 cd projects/sites/my-site
 ```
 

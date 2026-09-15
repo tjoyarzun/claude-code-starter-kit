@@ -58,7 +58,7 @@ project has a Vercel link, mention checking the dashboard.
 grep -rn "TODO\|FIXME\|HACK" --include='*.ts' --include='*.tsx' --include='*.js' --include='*.css' --include='*.html' . 2>/dev/null | grep -v node_modules | head -20
 ```
 
-Also check the project README and `pantry/solutions/README.md` for a status note.
+Also check the project README and `PROJECTS.md` for a status note.
 
 ## Step 6 — Report and propose
 

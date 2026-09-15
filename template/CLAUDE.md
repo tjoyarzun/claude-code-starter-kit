@@ -1,7 +1,7 @@
 # Workspace agent context
 
 This is my personal project workspace. Layout and philosophy live in
-[pantry/README.md](pantry/README.md) — this file is behavior rules only.
+[library/README.md](library/README.md) — this file is behavior rules only.
 
 Claude Code reads this automatically at the start of every session in this folder or below
 it. **Edit it whenever you catch yourself correcting Claude the same way twice.**
@@ -26,25 +26,25 @@ rather understand the thing than get a fix I can't explain.
 Identify the shape first — the right answers depend on it.
 
 - **Shape A — Web app.** Vite 6 + React 18 + TypeScript strict + Tailwind 3 + shadcn/ui.
-  Lives in `projects/apps/`. Starts from `pantry/scaffold/web-app/`.
+  Lives in `projects/apps/`. Starts from `library/templates/web-app/`.
 - **Shape B — Static site.** HTML + CSS + vanilla JS, no build step (Astro if it grows
-  content-heavy). Lives in `projects/sites/`. Starts from `pantry/scaffold/static-site/`.
+  content-heavy). Lives in `projects/sites/`. Starts from `library/templates/static-site/`.
 - **Shape C — Script/automation.** Python 3.11+ with `uv`, or a Node script. Runs locally or
   on a schedule.
 
 **Default to the smallest shape that does the job.** A personal site with five pages does not
 need React. Choosing Shape B when Shape B is enough is a skill, not a compromise.
 
-## The `pantry/` library
+## The `library/` library
 
-`pantry/` is a shelf you copy from, not a dependency you link to.
+`library/` is a shelf you copy from, not a dependency you link to.
 
 - Projects **copy** what they need at start, then drift freely. That's intended.
-- Claude Code loads `pantry/skills/` automatically via symlinks in `.claude/skills/`.
-- **Graduation is an explicit copy.** When a project invents something worth reusing, copy it
-  back into `pantry/` with a commit message naming where it came from. Rule of thumb:
-  graduate on the 3rd reuse, not the 1st — two uses is a coincidence.
-- Nothing in `pantry/` is imported at build time. Every project ships self-contained.
+- Claude Code loads `library/skills/` automatically via symlinks in `.claude/skills/`.
+- **Promotion is an explicit copy.** When a project invents something worth reusing, copy it
+  back into `library/` with a commit message naming where it came from. Rule of thumb:
+  promote on the 3rd reuse, not the 1st — two uses is a coincidence.
+- Nothing in `library/` is imported at build time. Every project ships self-contained.
 
 ## Working agreements
 
@@ -76,8 +76,9 @@ need React. Choosing Shape B when Shape B is enough is a skill, not a compromise
 ├── projects/
 │   ├── apps/        Shape A — React web apps
 │   └── sites/       Shape B — static sites
-├── pantry/          Library: scaffold, skills, snacks, cookbooks, tools, solutions
-├── shared/          Utilities used by more than one project
+├── PROJECTS.md      Index of every project, with repo and live URL
+├── library/         templates, skills, components, guides, tools
+├── shared/          Used by 2 projects, not yet promoted to library/
 ├── agent-docs/      Notes on things I learned that weren't obvious
 └── .claude/         settings.json + skills symlinks
 ```
@@ -88,12 +89,12 @@ Use the `/new-project` skill. It interviews me, picks the shape, copies the scaf
 git and GitHub, and makes the first commit. Manual equivalent:
 
 ```bash
-bash pantry/tools/new-project.sh app <slug>     # or: site <slug>
+bash library/tools/new-project.sh app <slug>     # or: site <slug>
 ```
 
 ## When stuck
 
 1. `agent-docs/` — did I already learn this?
-2. `pantry/cookbooks/` — is there a walkthrough?
-3. `bash pantry/tools/doctor.sh` — is the environment itself broken?
+2. `library/guides/` — is there a walkthrough?
+3. `bash library/tools/doctor.sh` — is the environment itself broken?
 4. Then read the actual docs or source. Don't guess.

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# link-skills.sh — symlink every pantry skill into .claude/skills/ so Claude Code finds them.
+# link-skills.sh — symlink every library skill into .claude/skills/ so Claude Code finds them.
 #
 # Usage: bash link-skills.sh [workspace-dir]
-# Default workspace: the parent of pantry/ (i.e. two levels up from this script).
+# Default workspace: the parent of library/ (i.e. two levels up from this script).
 #
-# Symlinks, not copies: editing pantry/skills/<name>/SKILL.md takes effect immediately,
+# Symlinks, not copies: editing library/skills/<name>/SKILL.md takes effect immediately,
 # with no sync step to forget.
 
 set -euo pipefail
@@ -13,14 +13,14 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WS="${1:-$(cd "$SCRIPT_DIR/../.." && pwd)}"
 WS="${WS/#\~/$HOME}"
 
-SKILLS_SRC="$WS/pantry/skills"
+SKILLS_SRC="$WS/library/skills"
 SKILLS_DST="$WS/.claude/skills"
 
 ok()   { printf '  \033[32m✓\033[0m %s\n' "$*"; }
 bad()  { printf '  \033[31m✗\033[0m %s\n' "$*" >&2; }
 
 if [ ! -d "$SKILLS_SRC" ]; then
-  bad "No pantry/skills directory at $SKILLS_SRC"
+  bad "No library/skills directory at $SKILLS_SRC"
   exit 1
 fi
 

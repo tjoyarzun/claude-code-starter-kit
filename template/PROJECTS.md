@@ -1,4 +1,4 @@
-# `solutions/`
+# Projects
 
 One row per project. What you built, where it lives, whether it's alive.
 
