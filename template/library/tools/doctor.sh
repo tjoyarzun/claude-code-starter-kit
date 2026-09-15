@@ -140,8 +140,13 @@ echo
 
 # --- workspace state --------------------------------------------------------
 
+# Look at this script's own location first — when run by absolute path from an unrelated
+# directory, $PWD tells you nothing, but ../.. from here is the workspace by construction.
+SELF_WS="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." 2>/dev/null && pwd)"
+
 WS=""
-for candidate in "$PWD" "$(dirname "$PWD")" "$HOME/dev" "$HOME/code" "$HOME/projects"; do
+for candidate in "$SELF_WS" "$PWD" "$(dirname "$PWD")" "$HOME/dev" "$HOME/code" "$HOME/projects"; do
+  [ -n "$candidate" ] || continue
   if [ -f "$candidate/CLAUDE.md" ] && [ -d "$candidate/library" ]; then WS="$candidate"; break; fi
 done
 

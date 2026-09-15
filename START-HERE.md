@@ -11,6 +11,31 @@ breaks. When you finish, they should be able to describe their own setup to some
 
 ---
 
+## Locating the kit
+
+**Before anything else, establish two paths and use them for the rest of the session.** Do not
+assume the working directory — the person may have started Claude Code anywhere, and may
+resume in a different folder tomorrow.
+
+- **`KIT`** — the directory containing this file. You know it: it's the path you just read
+  `START-HERE.md` from. Everything in `day-0/`, `docs/`, `bootstrap/`, and `template/` is
+  under it.
+- **`WORKSPACE`** — where their projects will live. Decided in Phase 0, created in Phase 4.
+  Default `~/dev`.
+
+Run `pwd` once at the start and say out loud which is which, so they aren't guessing either.
+Write commands with real absolute paths rather than `KIT`/`WORKSPACE` placeholders — they're
+notation for you, not something to paste.
+
+The scripts themselves resolve their own location, so `bash /any/path/bootstrap/bootstrap.sh`
+works from any directory. It's the paths *you* type that need care.
+
+**After Phase 4 there are two copies of the tools** — the kit's (`KIT/template/library/tools/`)
+and theirs (`WORKSPACE/library/tools/`). From Phase 4 onward, always use **theirs**. The kit's
+copy is a source to be copied from, not the one they should run.
+
+---
+
 ## Operating rules
 
 Follow these for the whole session. They matter more than the phase list below.
@@ -79,7 +104,8 @@ history of their code. `node` runs JavaScript outside a browser, which is what b
 are written in. `pnpm` downloads the libraries a project depends on. `gh` talks to GitHub
 from the terminal so they never have to click through the website for routine work.
 
-Run `bash template/library/tools/doctor.sh` from the kit folder first. It prints what's
+Run the kit's copy of the doctor first — `bash <KIT>/template/library/tools/doctor.sh`,
+with the real path substituted. It prints what's
 present, what's missing, and the exact install command for each gap on their platform. Work
 the gaps, then run it again until it's clean.
 
@@ -165,14 +191,14 @@ the least fiddly. Nothing about the workspace is Vercel-specific.
 never a question. Projects live in `projects/`. Reusable pieces live in `library/`. Things you
 learned live in `agent-docs/`.
 
-Run the bootstrapper from the kit folder:
+Run the bootstrapper, using the kit's real path and their chosen workspace path:
 
 ```bash
-bash bootstrap/bootstrap.sh ~/dev
+bash <KIT>/bootstrap/bootstrap.sh ~/dev
 ```
 
-(substituting their chosen path). It copies `template/` into place, symlinks the skills, and
-refuses to clobber an existing non-empty directory.
+It resolves its own location, so it works from any working directory. It copies `template/`
+into place, symlinks the skills, and refuses to clobber an existing non-empty directory.
 
 Then walk them through what appeared — **open the folders as you explain**, don't just
 describe them:

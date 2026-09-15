@@ -98,6 +98,19 @@ That's the whole job. From here Claude asks you questions, explains each phase b
 it, and checks that each phase worked before moving on. Expect **60–90 minutes** for the full
 run, including your first deployed website.
 
+### If step 3 gave you trouble
+
+Skip it. Start Claude Code from anywhere and paste this instead — it does the cloning for you:
+
+```
+Clone https://github.com/tjoyarzun/claude-code-starter-kit.git into a folder called kit
+here, then read kit/START-HERE.md and set up my environment. Walk me through it.
+```
+
+This works — the kit doesn't care which directory you started in. It's the fallback rather
+than the default for one reason: running `git clone` yourself is the first git command you'll
+ever run, it's worth understanding, and the rest of the setup assumes you've met it.
+
 ---
 
 ## What the setup covers
