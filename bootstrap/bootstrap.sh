@@ -93,6 +93,16 @@ else
   fail "link-skills.sh missing — skills will not be available to Claude Code."
 fi
 
+# --- plugins -----------------------------------------------------------------
+
+# User scope: these apply machine-wide, not just to this workspace.
+if [ -x "$TARGET/library/tools/install-plugins.sh" ]; then
+  bash "$TARGET/library/tools/install-plugins.sh" \
+    || skip "Plugin install had trouble — re-run library/tools/install-plugins.sh later"
+else
+  skip "install-plugins.sh missing — skipping plugins"
+fi
+
 # --- local env ---------------------------------------------------------------
 
 if [ ! -f "$TARGET/.env" ] && [ -f "$TARGET/.env.example" ]; then

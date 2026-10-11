@@ -102,6 +102,23 @@ else
 fi
 echo
 
+# --- plugins ----------------------------------------------------------------
+
+# Not counted as blocking: the workspace works without them, they just make it better.
+if command -v claude >/dev/null 2>&1; then
+  bold "Plugins"
+  PLUGINS="$(claude plugin list 2>/dev/null || true)"
+  for plug in vercel agent-skills; do
+    if printf '%s' "$PLUGINS" | grep -q "${plug}@"; then
+      ok "$plug" "installed"
+    else
+      warn "$plug" "not installed"
+      hint "bash $(dirname "${BASH_SOURCE[0]}")/install-plugins.sh"
+    fi
+  done
+  echo
+fi
+
 # --- auth state -------------------------------------------------------------
 
 bold "Accounts"

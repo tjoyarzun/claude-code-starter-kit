@@ -122,7 +122,7 @@ ever run, it's worth understanding, and the rest of the setup assumes you've met
 | 2 | GitHub account + SSH/auth + first test repo | Where your code lives and is backed up |
 | 3 | Vercel account, linked to GitHub | Where your sites become real URLs |
 | 4 | Build the workspace from `template/` | The folder structure everything lives in |
-| 5 | Install the 7 skills and the permission allowlist | Teaches Claude your conventions |
+| 5 | Install the 7 skills, 2 plugins, and the permission allowlist | Teaches Claude your conventions and adds Vercel + lifecycle expertise |
 | 6 | Build and deploy a real personal site | Proves the whole chain works end to end |
 | 7 | Handoff — what to do tomorrow | So the momentum doesn't die |
 
@@ -142,6 +142,26 @@ them by name (`/new-project`) or just by describing what you want.
 | `explain-this` | Teaching mode. Explains a file, an error, or a concept at the depth you ask for |
 | `catch-up` | "Where did I leave off?" — reads recent commits and open work, proposes the next step |
 | `promote-to-library` | Promotes a pattern into your library once it's earned a third reuse |
+
+---
+
+## The 2 installed plugins
+
+Plugins are bundles someone else publishes — skills, agents, sometimes hooks — installed once
+and available in every project. Setup installs two at user scope:
+
+| Plugin | Source | Why it's here |
+|---|---|---|
+| `vercel` | Anthropic's official marketplace | Deploys, environment variables, domains, rollbacks, the Vercel CLI — exactly what Phase 6 does |
+| `agent-skills` | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | `/plan`, `/test`, `/review`, `/ship` plus reviewer and test-engineer agents |
+
+`agent-skills` adds commands that *look* like the workspace's own — `/ship` is not
+`/ship-check`. The workspace skills are tuned to this setup and are the ones to reach for on a
+personal project; the plugin's are broader. The walkthrough says this out loud at the point of
+install.
+
+Don't want them? `claude plugin uninstall vercel`, or edit
+`template/library/tools/install-plugins.sh` before you hand the kit over.
 
 ---
 

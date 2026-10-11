@@ -1,6 +1,6 @@
 # How Claude Code works (the mental model)
 
-The five things that separate people who get a lot out of Claude Code from people who get
+The six things that separate people who get a lot out of Claude Code from people who get
 frustrated by it.
 
 ## 1. Context is finite, and you steer it
@@ -42,7 +42,33 @@ Invoke by name (`/ship-check`) or just describe the goal and let Claude match. W
 own is the natural next step once you notice yourself explaining the same multi-step process
 twice — ask Claude to write it and it will scaffold the file for you.
 
-## 4. Permissions are a dial, not a wall
+## 4. Plugins are skills someone else maintains
+
+A skill you wrote lives in your workspace. A *plugin* is a published bundle — skills, agents,
+sometimes hooks — that you install once and get everywhere:
+
+```bash
+claude plugin list                 # what you have
+claude plugin install <name>       # add one
+claude plugin uninstall <name>     # remove one
+```
+
+Your setup installs two: `vercel` (deploys, env vars, domains) and `agent-skills`
+(`/plan`, `/test`, `/review`, `/ship`). They're user-scope, so they work in every folder, and
+they load at session start — install one mid-session and you'll need to restart before it
+shows up.
+
+Two things worth knowing before you add more:
+
+- **Every plugin costs context.** Its skill descriptions load into every session whether you
+  use them or not. A dozen plugins is a real tax on how much room Claude has for your actual
+  code. `claude plugin details <name>` shows the projected cost.
+- **A plugin can ship hooks**, which run automatically and can change how Claude behaves in
+  every session — including overriding instructions you wrote. That's useful when you chose it
+  and surprising when you didn't. Read what a plugin includes before installing it, the same
+  way you'd read a dependency.
+
+## 5. Permissions are a dial, not a wall
 
 `.claude/settings.json` lists commands that run without asking. The shipped default: reading,
 searching, typechecking, linting, building, and installing run freely; pushing, deleting,
@@ -58,7 +84,7 @@ Three modes worth knowing:
   people live.
 - **Plan mode** (`Shift+Tab` twice) — no changes at all until you approve a plan.
 
-## 5. Describe problems, not solutions
+## 6. Describe problems, not solutions
 
 The instinct is to specify the fix: "change the margin on line 40 to 2rem." That constrains
 Claude to your diagnosis, which is often wrong.

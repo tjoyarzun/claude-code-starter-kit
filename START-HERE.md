@@ -221,7 +221,7 @@ the recommended extensions when it offers.
 
 ---
 
-## Phase 5 — Skills and conventions
+## Phase 5 — Skills, plugins, and conventions
 
 **What this is for:** A *skill* is a markdown file that teaches Claude Code a repeatable job
 with your preferences baked in. Without them, every session starts from zero and you
@@ -234,6 +234,41 @@ two ways to invoke: type `/new-project`, or just describe what they want and Cla
 Have them try one for real right now — `/explain-this` pointed at their own
 `CLAUDE.md` is a good first run, because the output is immediately useful and it proves the
 skills wiring works.
+
+### Plugins
+
+**Tell them what just happened, because Phase 4 installed software they didn't ask for by
+name.** The bootstrapper ran `library/tools/install-plugins.sh`, which added two plugins.
+
+A *plugin* is a bundle someone else published — skills, specialist agents, sometimes hooks —
+that you install once and get in every project. Their seven workspace skills are *theirs*,
+written for their conventions. Plugins are a shared library maintained by someone else.
+
+What got installed and why:
+
+| Plugin | From | What it adds |
+|---|---|---|
+| `vercel` | Anthropic's official marketplace | Deep knowledge of deploys, environment variables, domains, rollbacks, and Vercel's CLI — the exact things Phase 6 is about to do |
+| `agent-skills` | `addyosmani/agent-skills` | Lifecycle workflows: `/plan`, `/test`, `/review`, `/ship`, plus reviewer and test-engineer agents |
+
+Two things they need to hear plainly:
+
+1. **Plugins install at user scope** — machine-wide, not just this workspace. That's why they
+   work in any folder, and why uninstalling is `claude plugin uninstall <name>`.
+2. **`agent-skills` adds commands that look like duplicates of theirs.** `/ship` is not
+   `/ship-check`. Theirs is a short pre-deploy gate tuned to this workspace; the plugin's is a
+   broader production-launch checklist. When in doubt on a personal project, use theirs —
+   `/ship-check`, `/new-project`, `/deploy-to-vercel`. Say this out loud; otherwise the
+   overlapping names are the first thing that confuses them.
+
+Verify it worked: `claude plugin list` should show both as `enabled`. If either is missing,
+re-run `bash <WORKSPACE>/library/tools/install-plugins.sh` and read the error — a failure
+here is almost always no network or an unauthenticated `claude`.
+
+Plugins load at session start, so **they won't be active until Claude Code restarts.** If
+they want to use one during Phase 6, restart the session first.
+
+### Habits
 
 Also explain the three Claude Code habits worth building on day one:
 
